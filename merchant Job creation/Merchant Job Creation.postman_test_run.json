@@ -1,0 +1,80 @@
+{
+	"id": "9b082deb-15ee-4d41-87d6-eb7da9e46341",
+	"name": "Merchant Job Creation",
+	"timestamp": "2021-03-22T11:02:01.589Z",
+	"collection_id": "7a89f1e0-5c26-452a-abfb-dca7525cbe89",
+	"folder_id": 0,
+	"environment_id": "435e7596-e7f1-442a-a227-f6db4ad7acff",
+	"totalPass": 2,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "160d1c2f-a801-4ca1-8225-ab8a663de612",
+			"name": "job creation positive",
+			"url": "https://api-dev.warenext.ng/v1/truckerJob",
+			"time": 410,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				410
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "9d7f40c4-2857-437f-b26f-3cd2f9ecb10c",
+			"name": "job creation negative",
+			"url": "https://api-dev.warenext.ng/v1/truckerJob",
+			"time": 159,
+			"responseCode": {
+				"code": 405,
+				"name": "Method Not Allowed"
+			},
+			"tests": {
+				"Status code is 405": true
+			},
+			"testPassFailCounts": {
+				"Status code is 405": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				159
+			],
+			"allTests": [
+				{
+					"Status code is 405": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 569,
+	"collection": {
+		"requests": [
+			{
+				"id": "160d1c2f-a801-4ca1-8225-ab8a663de612",
+				"method": "PUT"
+			},
+			{
+				"id": "9d7f40c4-2857-437f-b26f-3cd2f9ecb10c",
+				"method": "GET"
+			}
+		]
+	}
+}

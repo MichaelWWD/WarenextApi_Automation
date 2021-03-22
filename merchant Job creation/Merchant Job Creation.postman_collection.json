@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "7a89f1e0-5c26-452a-abfb-dca7525cbe89",
+		"name": "Merchant Job Creation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "job creation positive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"pickupDate\": \"12/12/2021\",\n\"pickupTime\": \"12:02 AM\",\n\"locationFrom\": [\n{\n\"address\": {\n\"country\": \"Nigeria\",\n\"state\": \"Lagos\",\n\"city\": \"Ikeja\",\n\"closestLandmark\":\"computer village\",\n\"address\": \"12 Sobo Arobiodu Street, Ikeja, Nigeria\",\n\"zone\": \"Ikeja\",\n\"coords\": {\n\"lat\": 6.5757504,\n\"lng\": 3.3510988\n},\n\"contactName\": \"ware next\",\n\"contactNumber\": \"+2347063560000\"\n},\n\"products\": [\n{\n\"type\": \"Documents\",\n\"weight\": \"2\",\n\"quantity\": 2,\n\"description\": \"\"\n}\n]\n}\n],\n\"locationTo\": [\n{\n\"address\": {\n\"country\": \"Nigeria\",\n\"state\": \"Lagos\",\n\"city\": \"Lekki\",\n\"closestLandmark\":\"The place\",\n\"address\": \"20 Layi Yusuf Cresent, Lekki, Nigeria\",\n\"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\n\"coords\": {\n\"lat\": 6.4384494,\n\"lng\": 3.4545062\n},\n\"contactName\": \"ware next\",\n\"contactNumber\": \"+2347063560000\"\n},\n\"products\": [\n{\n\"type\": \"Documents\",\n\"weight\": \"2\",\n\"quantity\": 2,\n\"description\": \"\"\n}\n]\n}\n],\n\"details\": {\n\"vehicleQuantity\": 1,\n\"vehicleType\": \"motorbike\",\n\"truckType\": \"\",\n\"truckWeight\": \"\",\n\"products\": [\n{\n\"type\": \"Documents\",\n\"weight\": \"2\",\n\"quantity\": 2,\n\"description\": \"\"\n}\n]\n},\n\"deliveryPartner\": [\n\"VV8Pc8oGkzSobUMVxtQu\"\n],\n\"paymentInformation\": {\n\"method\": \"cash\",\n\"status\": \"success\",\n\"price\": 6000\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-dev.warenext.ng/v1/truckerJob",
+					"protocol": "https",
+					"host": [
+						"api-dev",
+						"warenext",
+						"ng"
+					],
+					"path": [
+						"v1",
+						"truckerJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "job creation negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}v1/truckerJob",
+					"host": [
+						"{{baseURL}}v1"
+					],
+					"path": [
+						"truckerJob"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

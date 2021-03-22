@@ -1,0 +1,92 @@
+{
+	"id": "ec232078-b2c9-48d6-8383-997491c4bc8a",
+	"name": "Merchant User Authentication",
+	"timestamp": "2021-03-22T11:01:04.873Z",
+	"collection_id": "bb14e74e-9f05-4f8c-9af6-8738150cc996",
+	"folder_id": 0,
+	"environment_id": "435e7596-e7f1-442a-a227-f6db4ad7acff",
+	"totalPass": 4,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "4eae6b7a-3523-411d-af8c-acd38be9553f",
+			"name": "Get authenticated positive",
+			"url": "https://api-dev.warenext.ng/auth/login?password=test1234&email=merchant@test.com",
+			"time": 304,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"roleId has property 100": true,
+				"roleName has a property merchant": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"roleId has property 100": {
+					"pass": 1,
+					"fail": 0
+				},
+				"roleName has a property merchant": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				304
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"roleId has property 100": true,
+					"roleName has a property merchant": true
+				}
+			]
+		},
+		{
+			"id": "ee42d303-b844-4c81-86c9-8a5e80c9d79e",
+			"name": "Get authenticated negative",
+			"url": "https://api-dev.warenext.ng/auth/login?password=test1234&email=merchant@test.com",
+			"time": 176,
+			"responseCode": {
+				"code": 405,
+				"name": "Method Not Allowed"
+			},
+			"tests": {
+				"Status code is 405": true
+			},
+			"testPassFailCounts": {
+				"Status code is 405": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				176
+			],
+			"allTests": [
+				{
+					"Status code is 405": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 480,
+	"collection": {
+		"requests": [
+			{
+				"id": "4eae6b7a-3523-411d-af8c-acd38be9553f",
+				"method": "GET"
+			},
+			{
+				"id": "ee42d303-b844-4c81-86c9-8a5e80c9d79e",
+				"method": "PUT"
+			}
+		]
+	}
+}
